@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'ShenanigansFont';
+    src: url('../Fonts/shenanigans/Shenanigans.ttf') format('truetype'),
+         url('../Fonts/shenanigans/Shenanigans.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'ShenanigansFont', sans-serif;
+}
