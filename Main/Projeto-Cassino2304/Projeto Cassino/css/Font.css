@@ -1,0 +1,167 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* --- CONFIGURAÇÃO DE FONTE --- */
+@font-face {
+    font-family: 'FingerPaint';
+    src: url('../Fonts/finger-paint/FingerPaint-Regular.ttf') format('truetype');
+}
+
+/* --- ESTILOS GLOBAIS --- */
+body {
+    font-family: 'FingerPaint', sans-serif;
+    background: linear-gradient(#4a9eff 0%, #c2e0ff 50%, #fff 100%);
+    color: #000;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* --- ESTRUTURA DE JANELA (UI) --- */
+.window {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #a0a0a0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+/* Compartilha o mesmo gradiente e estilo de texto branco */
+.title-bar {
+    background: linear-gradient(#0054e3, #4192d9);
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+.title-bar {
+    border-radius: 6px 6px 0 0;
+    text-align: center;
+}
+
+.content {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 0 0 6px 6px;
+}
+
+/* --- MÍDIA --- */
+video, img {
+    border: 1px solid #a0a0a0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+video { margin: 10px 0; }
+
+/* --- TIPOGRAFIA E LINKS --- */
+a, h1, h2, .titlepage { color: #0054e3; }
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover { text-decoration: underline; }
+
+h1, h2 { margin-top: 20px; }
+
+.titlepage {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+p { line-height: 1.6; }
+
+/* --- SEÇÃO HERO --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px 0;
+    background: linear-gradient(135deg, #f0f4ff, #fff);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.hero .btn-primario {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+}
+.moldura {
+  padding: 12px 24px;
+  font-weight: bold;
+  border: transparent; 
+  border-radius: 8px; 
+  background: linear-gradient(#0054e3, #4192d9);
+  color: #ffffff;
+  display: inline-block; 
+}
+.login-box {
+    max-width: 350px; /* Janelas de login costumam ser menores */
+    width: 100%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.field label {
+    color: #0054e3;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.field input {
+    padding: 8px;
+    border: 1px solid #a0a0a0;
+    border-radius: 4px;
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.1);
+    font-family: sans-serif; /* Melhora a leitura ao digitar */
+}
+
+/* Ajuste para o botão moldura funcionar como elemento de clique */
+button.moldura {
+    cursor: pointer;
+    width: 100%;
+    font-family: 'FingerPaint', sans-serif;
+    transition: opacity 0.2s;
+}
+
+button.moldura:hover {
+    opacity: 0.9;
+}
+
+.text-center {
+    text-align: center;
+}
