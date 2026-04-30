@@ -1,74 +1,149 @@
-.login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* --- VARIÁVEIS DE CORES E ESTILO (DO CSS 2) --- */
+:root {
+    --primary: #d32f2f; /* Vermelho Alerta */
+    --bg-dark: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #e0e0e0;
+    --accent: #ffc107; /* Amarelo para destaque */
+    --window-bg: rgba(30, 30, 30, 0.9); /* Adaptado para o fundo escuro */
 }
-/* --- CONFIGURAÇÃO DE FONTE --- */
+
+/* --- CONFIGURAÇÃO DE FONTE (DO CSS 1) --- */
 @font-face {
     font-family: 'FingerPaint';
     src: url('../Fonts/finger-paint/FingerPaint-Regular.ttf') format('truetype');
 }
 
-/* --- ESTILOS GLOBAIS --- */
+/* --- ESTILOS GLOBAIS (FUSÃO DE FUNDO DO CSS 2 COM ESTRUTURA DO CSS 1) --- */
 body {
     font-family: 'FingerPaint', sans-serif;
-    background: linear-gradient(#4a9eff 0%, #c2e0ff 50%, #fff 100%);
-    color: #000;
+    background: radial-gradient(circle at top, #2c0000 0%, #121212 100%);
+    color: var(--text-main);
     margin: 0;
     padding: 20px;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* --- ESTRUTURA DE JANELA (UI) --- */
-.window {
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid #a0a0a0;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    margin: 20px auto;
-    max-width: 1000px;
-}
-
-/* Compartilha o mesmo gradiente e estilo de texto branco */
-.title-bar {
-    background: linear-gradient(#0054e3, #4192d9);
-    color: #fff;
-    padding: 5px 10px;
-    font-weight: bold;
-}
-
-.title-bar {
-    border-radius: 6px 6px 0 0;
+/* --- CABEÇALHO DO CSS 2 --- */
+header {
+    width: 100%;
+    padding: 40px 0;
     text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--primary);
+    margin-bottom: 30px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(211, 47, 47, 0.5);
+}
+
+/* --- ESTRUTURA DE JANELA (UI DO CSS 1 ADAPTADA) --- */
+.window {
+    background: var(--window-bg);
+    border: 1px solid #333;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin: 5px auto 20px auto; /* Reduzimos a margem superior para 5px */
+    max-width: 1000px;
+    width: 90%;
+}
+.title-bar {
+    background: linear-gradient(to right, #6b0000, #a00000);
+    color: #fff;
+    padding: 15px 10px;
+    font-weight: bold;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+    border-bottom: 1px solid var(--primary);
 }
 
 .content {
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 0 0 6px 6px;
+    padding: 30px;
+    background: var(--card-bg);
+    border-radius: 0 0 12px 12px;
 }
 
-/* --- MÍDIA --- */
+/* --- NAVEGAÇÃO --- */
+nav {
+    margin: 20px 0;
+    text-align: center;
+}
+
+nav a {
+    color: var(--accent);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* --- MÍDIA E TABELAS --- */
 video, img {
-    border: 1px solid #a0a0a0;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid #444;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    max-width: 100%;
 }
 
-video { margin: 10px 0; }
+video { margin: 15px 0; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background-color: var(--primary);
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+td {
+    background-color: #252525;
+    padding: 15px;
+    border-bottom: 1px solid #333;
+}
 
 /* --- TIPOGRAFIA E LINKS --- */
-a, h1, h2, .titlepage { color: #0054e3; }
+a, h1, h2, h3, .titlepage { color: var(--primary); }
 
 a {
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
 }
 
-a:hover { text-decoration: underline; }
+a:hover { text-decoration: underline; color: var(--accent); }
 
-h1, h2 { margin-top: 20px; }
+h1, h2, h3 { margin-top: 20px; }
+
+h3 {
+    border-left: 4px solid var(--primary);
+    padding-left: 15px;
+}
 
 .titlepage {
     font-size: 24px;
@@ -76,7 +151,8 @@ h1, h2 { margin-top: 20px; }
     text-align: center;
 }
 
-p { line-height: 1.6; }
+p { line-height: 1.8; font-size: 1.1rem; color: #bbb; }
+li { margin-bottom: 10px; color: var(--accent); }
 
 /* --- SEÇÃO HERO --- */
 .hero {
@@ -87,40 +163,51 @@ p { line-height: 1.6; }
     align-items: center;
     text-align: center;
     padding: 80px 20px 0;
-    background: linear-gradient(135deg, #f0f4ff, #fff);
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 15px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
 }
 
 .hero h1 {
     font-size: 3.5rem;
     font-weight: 800;
-    color: #0f172a;
+    color: #fff;
     margin-bottom: 20px;
     line-height: 1.1;
     letter-spacing: -1.5px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
 .hero p {
     font-size: 1.2rem;
-    color: #64748b;
+    color: #888;
     max-width: 600px;
     margin: 0 auto 40px;
 }
 
-.hero .btn-primario {
-    padding: 16px 32px;
-    font-size: 1.1rem;
+/* --- BOTÕES E FORMULÁRIOS --- */
+.moldura, button {
+    padding: 12px 24px;
+    font-weight: bold;
+    border: transparent; 
+    border-radius: 8px; 
+    background: var(--primary);
+    color: #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'FingerPaint', sans-serif;
+    transition: all 0.3s;
 }
-.moldura {
-  padding: 12px 24px;
-  font-weight: bold;
-  border: transparent; 
-  border-radius: 8px; 
-  background: linear-gradient(#0054e3, #4192d9);
-  color: #ffffff;
-  display: inline-block; 
+
+.moldura:hover, button:hover {
+    transform: scale(1.05);
+    background: #f44336;
 }
+
 .login-box {
-    max-width: 350px; /* Janelas de login costumam ser menores */
+    max-width: 350px;
     width: 100%;
 }
 
@@ -137,29 +224,20 @@ p { line-height: 1.6; }
 }
 
 .field label {
-    color: #0054e3;
+    color: var(--primary);
     font-weight: bold;
     font-size: 14px;
 }
 
-.field input {
-    padding: 8px;
-    border: 1px solid #a0a0a0;
-    border-radius: 4px;
-    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.1);
-    font-family: sans-serif; /* Melhora a leitura ao digitar */
-}
-
-/* Ajuste para o botão moldura funcionar como elemento de clique */
-button.moldura {
-    cursor: pointer;
+input, textarea {
     width: 100%;
-    font-family: 'FingerPaint', sans-serif;
-    transition: opacity 0.2s;
-}
-
-button.moldura:hover {
-    opacity: 0.9;
+    padding: 12px;
+    background: #121212;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 8px;
+    margin: 5px 0 10px;
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .text-center {
